@@ -28,8 +28,8 @@ export async function getServerSideProps (context) {
 
 function Statistics (props) {
   return (
-    <div className='mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3'>
-      <StatsBlock title='Spelling & Pronunciation' value='Easy' />
+    <div className='mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2'>
+      {/* <StatsBlock title='Spelling & Pronunciation' value='Easy' /> */}
       <StatsBlock
         title='Babies Assigned Male At Birth'
         value={percent(props.amabFraction)}

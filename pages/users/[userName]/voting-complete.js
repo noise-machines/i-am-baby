@@ -6,7 +6,7 @@ export default function () {
   const namesYouBothLike = links.currentParent.namesYouBothLike()
 
   return (
-    <div className='fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center'>
+    <div className='px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center'>
       <div
         className='bg-white rounded-lg px-4 pt-5 pb-4 mx-5 overflow-hidden shadow-xl sm:max-w-sm sm:w-full sm:p-6 my-4'
         role='dialog'
