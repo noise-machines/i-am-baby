@@ -11,6 +11,14 @@ export default function logInInputCard(props) {
     setUserLinks(getLinks(userName.toLocaleLowerCase()).rateNextName())
   }, [userName])
 
+  function isValid(name) {
+    return name.length > 0 && name.indexOf(" ") === -1
+  }
+
+  function hasSpaces(name){
+    return name.indexOf(" ") != -1
+  }
+
   return (
     <div
       className="bg-white rounded-lg px-4 pt-5 pb-4 mx-5 overflow-hidden shadow-xl sm:max-w-sm sm:w-full sm:p-6 my-4"
@@ -44,18 +52,20 @@ export default function logInInputCard(props) {
               placeholder="Joe"
             />
           </div>
+          {hasSpaces(userName) &&
+          <span className="text-red-600">no spaces</span>}
         </div>
       </div>
-      {userName.length > 0 && (
+      {isValid(userName) > 0 && (
         <div className="mt-5 sm:mt-6">
           <span className="flex w-full rounded-md shadow-sm">
             <Link
-              disabled={userName.length < 1}
+              disabled={isValid(userName) < 1}
               href={userLinks.href}
               as={userLinks.as}
             >
               <button
-                disabled={userName.length < 1}
+                disabled={isValid(userName) < 1}
                 type="button"
                 className="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-indigo-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition ease-in-out duration-150 sm:text-sm sm:leading-5"
               >
